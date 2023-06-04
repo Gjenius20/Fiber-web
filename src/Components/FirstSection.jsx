@@ -1,60 +1,51 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export default function FirstSection() {
     return (
         <div className="section">
-            <motion.div
-                className="section__start"
-                initial={{ y: [-20, 0, -20] }}
-                animate={{ y: [0, -20, 0] }}
-                transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                    bounce: 100,
-                }}>
-                <svg
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="section__arrow">
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-                    />
-                </svg>
-            </motion.div>
-            <div className="section__abbout">
-                <div className="section__list">
-                    <div className="section__title">Who Am I? </div>
-                    <div className="section__description">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Recusandae molestias temporibus minima eum dicta
-                        obcaecati vero doloremque tempore omnis, aut itaque
-                        animi eius, nisi et. Dolor dolorem vero reiciendis illo.
-                    </div>
-                </div>
-                <div className="section__list">
-                    <div className="section__title">Who Am I? </div>
-                    <div className="section__description">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Recusandae molestias temporibus minima eum dicta
-                        obcaecati vero doloremque tempore omnis, aut itaque
-                        animi eius, nisi et. Dolor dolorem vero reiciendis illo.
-                    </div>
-                </div>
-                <div className="section__list">
-                    <div className="section__title">Who Am I? </div>
-                    <div className="section__description">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Recusandae molestias temporibus minima eum dicta
-                        obcaecati vero doloremque tempore omnis, aut itaque
-                        animi eius, nisi et. Dolor dolorem vero reiciendis illo.
-                    </div>
-                </div>
-            </div>
+            <motion.ul>
+                <motion.li
+                    className=""
+                    initial={{ y: 300, opacity: 0.3 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{
+                        type: "spring",
+                        bounce: 0.2,
+                        duration: 1,
+                        delay: 0.1,
+                    }}
+                    viewport={{ once: true }}>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Obcaecati veniam mollitia, sit doloribus harum quae
+                        itaque possimus deleniti. Libero iure beatae eos alias
+                        tempora expedita provident fuga inventore porro
+                        voluptate excepturi sit, vitae praesentium cumque
+                        officia suscipit explicabo? Atque, id.
+                    </p>
+                </motion.li>
+                <motion.li
+                    className=""
+                    initial={{ y: 300, opacity: 0.3 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{
+                        type: "spring",
+                        bounce: 0.2,
+                        duration: 0.8,
+                        delay: 0.1,
+                    }}
+                    viewport={{ once: true }}>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Obcaecati veniam mollitia, sit doloribus harum quae
+                        itaque possimus deleniti. Libero iure beatae eos alias
+                        tempora expedita provident fuga inventore porro
+                        voluptate excepturi sit, vitae praesentium cumque
+                        officia suscipit explicabo? Atque, id.
+                    </p>
+                </motion.li>
+            </motion.ul>
         </div>
     );
 }

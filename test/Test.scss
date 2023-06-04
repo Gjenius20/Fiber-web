@@ -1,0 +1,103 @@
+.navbar {
+    position: fixed;
+    place-items: center;
+
+    &__brand {
+        margin-left: 3vh;
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        place-items: center;
+    }
+
+    &__button {
+        padding-inline: 20px;
+        .navbar__toggle {
+            background: none;
+            width: 30px;
+            border: none;
+        }
+    }
+
+    &__home {
+        // display: flex;
+        justify-content: space-between;
+        place-items: center;
+        // background-color: #fff;
+        width: 95vw;
+        padding-inline: 12px;
+        padding-block: 15px;
+    }
+
+    &__menu {
+        display: block;
+        background: rgba(white, 0.5);
+        border-end-start-radius: 0.5rem;
+        border-start-start-radius: 0.5rem;
+        padding-bottom: 15px;
+        transform: translateX(1vw);
+
+        &.disable {
+            display: flex;
+            flex-direction: column;
+            place-items: end;
+        }
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+            place-items: end;
+        }
+
+        li {
+            margin-top: 15px;
+            padding-inline: 20px;
+            a {
+                font-size: 1rem;
+                opacity: 100%;
+                // color: white;
+                color: black;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        place-items: center;
+        &__home {
+            display: flex;
+        }
+        &__toggle {
+            display: none;
+        }
+
+        &__brand {
+            margin-left: 10vh;
+            font-size: 20px;
+        }
+
+        &__menu {
+            display: block;
+            display: flex;
+            flex-direction: row;
+
+            &.active {
+                display: flex;
+                flex-direction: row;
+                background: none;
+            }
+            &.disable {
+                display: flex;
+                flex-direction: row;
+                background: none;
+            }
+
+            li {
+                a {
+                    font-size: 1.1rem;
+                    color: white;
+                }
+            }
+        }
+    }
+}

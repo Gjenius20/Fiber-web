@@ -6,106 +6,78 @@
 }
 .App {
     background-color: #370062;
+    height: 100vh;
+    position: fixed;
 }
 
 .navbar {
-    position: fixed;
-    place-items: center;
-
-    &__brand {
-        margin-left: 3vh;
-    }
-
-    &__wrap {
-        display: flex;
-        justify-content: space-between;
-        place-items: center;
-    }
-
-    &__button {
-        padding-inline: 20px;
-        .navbar__toggle {
-            background: none;
-            width: 30px;
-            border: none;
-        }
-    }
-
-    &__home {
-        // display: flex;
-        justify-content: space-between;
-        place-items: center;
-        // background-color: #fff;
-        width: 95vw;
-        padding-inline: 12px;
-        padding-block: 15px;
-    }
-
-    &__menu {
-        display: block;
-        background: rgba(white, 0.5);
-        border-end-start-radius: 0.5rem;
-        border-start-start-radius: 0.5rem;
-        padding-bottom: 15px;
-        transform: translateX(1vw);
-
-        &.disable {
-            display: flex;
-            flex-direction: column;
-            place-items: end;
-        }
-
-        &.active {
-            display: flex;
-            flex-direction: column;
-            place-items: end;
-        }
-
-        li {
-            margin-top: 15px;
-            padding-inline: 20px;
-            a {
-                font-size: 1rem;
-                opacity: 100%;
-                // color: white;
-                color: black;
-            }
-        }
-    }
-    @media (min-width: 768px) {
-        place-items: center;
-        &__home {
-            display: flex;
-        }
-        &__toggle {
+    @media (min-width: 0px) {
+        &__desktop {
             display: none;
         }
 
-        &__brand {
-            margin-left: 10vh;
-            font-size: 20px;
+        &__mobile {
+            width: 100vw;
+            position: fixed;
+            // background-color: black;
+            .navbar__menu {
+                display: flex;
+                justify-content: space-between;
+                padding-inline: 20px;
+                padding-top: 10px;
+                align-items: center;
+                .navbar__button {
+                    .navbar__toggle {
+                        background-color: transparent;
+                        box-shadow: none;
+                        border: transparent;
+                        .navbar__hamburger {
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+
+            .navbar__wrap {
+                background-color: rgba(white, 0.5);
+                padding: 20px;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                a {
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    @media (min-width: 720px) {
+        &__mobile {
+            display: none;
         }
 
-        &__menu {
+        &__desktop {
+            // background-color: black;
+            width: 100vw;
             display: block;
+            position: fixed;
             display: flex;
-            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            // padding-inline: 40px;
 
-            &.active {
+            .navbar__wrap {
+                padding-inline: 30px;
                 display: flex;
-                flex-direction: row;
-                background: none;
-            }
-            &.disable {
-                display: flex;
-                flex-direction: row;
-                background: none;
-            }
-
-            li {
-                a {
-                    font-size: 1.1rem;
-                    color: white;
+                li {
+                    a {
+                        font-size: 30px;
+                        text-decoration: none;
+                        color: white;
+                    }
+                    margin-right: 20px;
                 }
             }
         }
@@ -117,77 +89,51 @@
         background-color: transparent;
     }
     .container {
-        height: 350px;
+        height: 100vh;
+        width: 100vw;
         background-image: url("text3d.png");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
         background-position: center center;
-        background-position-y: 4vh;
+        // background-position-y: 4vh;
         color: white;
         background-size: 38rem;
     }
 
     @media (min-width: 768px) {
-        padding-top: 54px;
+        // padding-top: 54px;
         .container {
             background-size: 100vh;
-            background-position-y: 6vh;
+            // background-position-y: -10vh;
         }
     }
 }
 .section {
-    // height: 100%;
-    // height: 1000px;
+    // padding-top: -10vh;
+    // background-color: red;
 
-    &__arrow {
-        display: none;
+    padding-inline: 20px;
+
+    @media (min-width: 0px) {
     }
 
-    &__abbout {
-        // margin-top: 40vh;
-        margin-top: 40px;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__list {
-        padding-inline: 20px;
-        padding-block: 50px;
-        margin-inline: 20px;
-        // margin-top: 20px;
-    }
-    &__description {
-        font-size: 17px;
-    }
-
-    @media (min-width: 768px) {
-        overflow: hidden;
-        padding-inline: 10vh;
-        padding-bottom: 9.9vh;
-
-        &__start {
-            margin-top: 10vh;
-
-            .section__arrow {
-                opacity: 20%;
-                width: 30px;
-                display: block;
-                margin: auto;
-            }
-        }
-
-        &__abbout {
+    @media (min-width: 720px) {
+        ul {
+            // height: 60vh;
             display: flex;
-            flex-direction: row;
-        }
-        &__list {
-            padding: 30px;
-            background-color: gray;
-        }
-        &__description {
-            font-size: 12px;
+            overflow: hidden;
+
+            li {
+                height: 40vh;
+                position: relative;
+                margin: 8px;
+                margin-inline: 9px;
+                background-color: gray;
+                p {
+                    align-content: start;
+                }
+            }
         }
     }
 }
